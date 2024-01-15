@@ -1,0 +1,11 @@
+# proyecto desarrollado en net core 7
+
+# probar el servicio en modo produccion
+dotnet restore
+dotnet publish --arch x64 --output C:\inetpub\wwwroot\buildServiceRallyDiciembre2023
+
+# run consola windows
+sc.exe create RallyDiciembre2023 binpath= "C:\inetpub\wwwroot\buildServiceRallyDiciembre2023\service-rally-diciembre-2023.exe" start= auto 
+sc.exe start "RallyDiciembre2023"
+sc.exe stop "RallyDiciembre2023"
+sc.exe delete "RallyDiciembre2023"
